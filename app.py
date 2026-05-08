@@ -386,7 +386,7 @@ def download_grib(source_url: str, key: str) -> Path:
         return output_path
 
     suffix = ".grib2"
-    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix) as handle:
+    with tempfile.NamedTemporaryFile(delete=False, suffix=suffix, dir=output_path.parent) as handle:
         temp_path = Path(handle.name)
 
     with requests.get(source_url, stream=True, timeout=120) as response:
