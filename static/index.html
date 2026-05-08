@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MRMS Reflectivity Mapbox WebGL Pipeline</title>
+    <link rel="preconnect" href="https://api.mapbox.com" />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.css" rel="stylesheet" />
+    <link href="/static/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="control-panel">
+        <div id="productButtons" class="product-buttons"></div>
+        <div class="opacity-control">
+          <div class="slider-header">
+            <label for="opacitySlider">Transparency</label>
+            <span id="opacityValue">82%</span>
+          </div>
+          <input id="opacitySlider" type="range" min="0" max="100" step="1" value="82" />
+        </div>
+        <div class="legend">
+          <span id="legendTitle" class="legend-title">dBZ</span>
+          <div class="legend-bar"></div>
+          <div class="legend-labels">
+            <span id="legendMin">min</span>
+            <span id="legendMax">max</span>
+          </div>
+        </div>
+      </aside>
+      <main class="map-shell">
+        <div id="map"></div>
+      </main>
+    </div>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.15.0/mapbox-gl.js"></script>
+    <script type="module" src="/static/app.js"></script>
+  </body>
+</html>
